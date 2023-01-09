@@ -9,7 +9,7 @@ tilecode encoding command line app and library by deno.
 ## Install
 
 ```shell
-deno install --name tilecode https://deno.land/x/tilecode@0.0.1/main.ts
+deno install --name tilecode https://deno.land/x/tilecode@0.0.3/main.ts
 ```
 
 The command is installed at `$HOME/.deno/bin/tilecode`
