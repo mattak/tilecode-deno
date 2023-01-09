@@ -1,14 +1,15 @@
 # tilecode by deno
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![tilecode module version](https://shield.deno.dev/x/tilecode)
+![test workflow](https://github.com/mattak/tilecode-deno/actions/workflows/test.yml/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 tilecode encoding command line app and library by deno.
 
 ## Install
 
 ```shell
-$ deno install --name tilecode ./main.ts
+deno install --name tilecode https://deno.land/x/tilecode@0.0.1/main.ts
 ```
 
 The command is installed at `$HOME/.deno/bin/tilecode`
@@ -16,7 +17,7 @@ The command is installed at `$HOME/.deno/bin/tilecode`
 ## Usage
 
 ```shell
-$ tilecode <zoom> <lat> <lng>
+$ tilecode <zoom,lat,lng>
 $ tilecode <zoom/x/y>
 $ tilecode <binarycode>
 $ tilecode <hexcode>
