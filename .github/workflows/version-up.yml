@@ -28,6 +28,7 @@ jobs:
           git diff
           git add version.ts README.md
           git commit -m ":up: Bump up $VERSION"
+          git tag $NEW_VERSION
           git push origin main
           git push origin --tags
         env:
