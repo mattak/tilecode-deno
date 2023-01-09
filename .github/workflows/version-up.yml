@@ -1,4 +1,4 @@
-name: Version Up
+name: version up
 
 on:
   workflow_dispatch:
@@ -6,12 +6,8 @@ on:
       version:
         description: Semantic versioning
         required: true
-        default: patch
-        type: choice
-        options:
-          - major
-          - minor
-          - patch
+        default: 0.0.1
+        type: string
 
 jobs:
   version-up:
