@@ -1,0 +1,38 @@
+name: Version Up
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Semantic versioning
+        required: true
+        default: patch
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+
+jobs:
+  version-up:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 1
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Version up
+        id: version
+        run: |
+          set -ex
+          echo "::set-output name=version::${NEW_VERSION}"
+          perl -i -s -pe 's|VERSION = ".+"|VERSION = "$VERSION"|g' -- -VERSION=$NEW_VERSION version.ts
+          perl -i -s -pe 's|deno.land/x/tilecode@[^/]+/|deno.land/x/tilecode\@$VERSION/|g' -- -VERSION=$NEW_VERSION README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff
+          git add version.ts README.md
+          git commit -m ":up: Bump up $VERSION"
+          git push origin main
+          git push origin --tags
+        env:
+          NEW_VERSION: ${{ github.event.inputs.version }}
