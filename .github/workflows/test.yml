@@ -1,4 +1,4 @@
-name: deno-test
+name: fmt,lint,test
 
 on: [push, pull_request]
 
