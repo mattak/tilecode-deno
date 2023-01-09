@@ -28,7 +28,10 @@ export async function runCommand() {
     )
     .example("json", "tilecode --format-json 0b1101")
     .example("tsv", "tilecode --format-tsv 18/232831/103246")
-    .option("--hex", "print only hex code. format: `0x<hex>*`. zoom level must be even if using this option.")
+    .option(
+      "--hex",
+      "print only hex code. format: `0x<hex>*`. zoom level must be even if using this option.",
+    )
     .option("--binary", "print only binary code. format: `0b<binary>*`")
     .option("--tile-id", "print only tile id. format: `<zoom>/<x>/<y>`")
     .option(

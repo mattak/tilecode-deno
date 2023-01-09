@@ -1,5 +1,5 @@
-import {TileCode} from "../lib/tilecode.ts";
-import {parseTileCode} from "../lib/parser.ts";
+import { TileCode } from "../lib/tilecode.ts";
+import { parseTileCode } from "../lib/parser.ts";
 
 interface encodeOptions {
   hex?: true | undefined;
@@ -27,7 +27,9 @@ export function executeEncode(
 ) {
   const tilecode: TileCode = parseTileCode(argument);
   if (options.hex) {
-    if (!tilecode.isAvailableHexCode()) throw new Error("tilecode zoom level must be even.")
+    if (!tilecode.isAvailableHexCode()) {
+      throw new Error("tilecode zoom level must be even.");
+    }
     console.log(tilecode.toHexString(true));
     return;
   }
