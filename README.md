@@ -1,6 +1,6 @@
 # tilecode by deno
 
-tilecode encoding/decoding implementation by deno.
+tilecode encoding command line app and library by deno.
 
 ## Install
 
