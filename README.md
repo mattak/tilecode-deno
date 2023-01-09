@@ -1,5 +1,8 @@
 # tilecode by deno
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![tilecode module version](https://shield.deno.dev/x/tilecode)
+
 tilecode encoding command line app and library by deno.
 
 ## Install
