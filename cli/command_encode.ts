@@ -16,7 +16,7 @@ function printJson(map: { [key: string]: string }) {
 }
 
 function printTsv(map: { [key: string]: string }) {
-  for (let key of Object.keys(map)) {
+  for (const key of Object.keys(map)) {
     console.log(`${key}\t${map[key]}`);
   }
 }
